@@ -1,5 +1,6 @@
 package javacore.senior.shk.java2;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.Test;
 
 import java.util.AbstractList;
@@ -124,7 +125,7 @@ public class GenericTest {
 
     }
 
-    public void print(List<?> list){
+    public void print(@NotNull List<?> list){
         Iterator<?> iterator = list.iterator();
         while(iterator.hasNext()){
             Object obj = iterator.next();

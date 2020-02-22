@@ -59,10 +59,9 @@ public class GenericTest1 {
     //测试泛型方法
     @Test
     public void test4(){
-        Order<String> order = new Order<>();
         Integer[] arr = new Integer[]{1,2,3,4};
         //泛型方法在调用时，指明泛型参数的类型。
-        List<Integer> list = order.copyFromArrayToList(arr);
+        List<Integer> list = Order.copyFromArrayToList(arr);
 
         System.out.println(list);
     }
