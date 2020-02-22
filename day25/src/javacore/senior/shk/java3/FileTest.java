@@ -40,17 +40,17 @@ public class FileTest {
     public void test1(){
         //构造器1
         File file1 = new File("hello.txt");//相对于当前module
-        File file2 =  new File("D:\\workspace_idea1\\JavaSenior\\day08\\he.txt");
+        File file2 =  new File("E:\\ideaWorkspace01\\JavaCoreSenior\\day25\\hello.txt");
 
         System.out.println(file1);
         System.out.println(file2);
 
         //构造器2：
-        File file3 = new File("D:\\workspace_idea1","JavaSenior");
+        File file3 = new File("E:\\ideaWorkspace01\\JavaCoreSenior\\day25");
         System.out.println(file3);
 
         //构造器3：
-        File file4 = new File(file3,"hi.txt");
+        File file4 = new File(file3,"hello.txt");
         System.out.println(file4);
     }
 
@@ -71,13 +71,13 @@ public File[] listFiles() ：获取指定目录下的所有文件或者文件目
     @Test
     public void test2(){
         File file1 = new File("hello.txt");
-        File file2 = new File("d:\\io\\hi.txt");
+        File file2 = new File("E:" + File.separator + "code\\io\\hi.txt");
 
         System.out.println(file1.getAbsolutePath());
         System.out.println(file1.getPath());
         System.out.println(file1.getName());
         System.out.println(file1.getParent());
-        System.out.println(file1.length());
+        System.out.println(file1.length() + "Byte");
         System.out.println(new Date(file1.lastModified()));
 
         System.out.println();
@@ -86,12 +86,12 @@ public File[] listFiles() ：获取指定目录下的所有文件或者文件目
         System.out.println(file2.getPath());
         System.out.println(file2.getName());
         System.out.println(file2.getParent());
-        System.out.println(file2.length());
+        System.out.println(file2.length() + "Byte");
         System.out.println(file2.lastModified());
     }
     @Test
     public void test3(){
-        File file = new File("D:\\workspace_idea1\\JavaSenior");
+        File file = new File("E:\\ideaWorkspace01\\JavaCoreSenior");
 
         String[] list = file.list();
         for(String s : list){
@@ -114,7 +114,7 @@ public File[] listFiles() ：获取指定目录下的所有文件或者文件目
     @Test
     public void test4(){
         File file1 = new File("hello.txt");
-        File file2 = new File("D:\\io\\hi.txt");
+        File file2 = new File("E:\\code\\io\\hi.txt");
 
         boolean renameTo = file2.renameTo(file1);
         System.out.println(renameTo);
