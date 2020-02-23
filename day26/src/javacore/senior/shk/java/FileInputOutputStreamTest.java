@@ -10,6 +10,10 @@ import java.io.*;
  * 结论：
  * 1. 对于文本文件(.txt,.java,.c,.cpp)，使用字符流处理
  * 2. 对于非文本文件(.jpg,.mp3,.mp4,.avi,.doc,.ppt,...)，使用字节流处理
+ * 3. 其实对于文本文件也是可以用字节流来处理的，不过读文件的时候，很大概率会出现乱码
+ *    除非文本文件里面的每一个字符在其编码方式的情况下只占用一个字节
+ *    结合字节输入流和字节输出流也可以实现文本文件的复制操作，不过复制文本文件没有字符流效率高
+ * 4. GBK字符集，一个中文字符占两个字节；UTF-8字符集，一个中文字符占三个字节；ASCII字符集中不存在中文字符
  *
  *
  *
@@ -71,6 +75,7 @@ public class FileInputOutputStreamTest {
             fos = new FileOutputStream(destFile);
 
             //复制的过程
+
             byte[] buffer = new byte[5];
             int len;
             while((len = fis.read(buffer)) != -1){
@@ -161,7 +166,7 @@ public class FileInputOutputStreamTest {
 
         long end = System.currentTimeMillis();
 
-        System.out.println("复制操作花费的时间为：" + (end - start));//618
+        System.out.println("复制操作花费的时间为：" + (end - start));//618ms
 
     }
 

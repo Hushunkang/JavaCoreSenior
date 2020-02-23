@@ -3,6 +3,7 @@ package javacore.senior.shk.java;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.HashMap;
 
 /**
  *
@@ -29,12 +30,12 @@ public class FileReaderWriterTest {
         File file = new File("hello.txt");//相较于当前工程
         System.out.println(file.getAbsolutePath());
 
-        File file1 = new File("day09\\hello.txt");
+        File file1 = new File("day26\\hello.txt");
         System.out.println(file1.getAbsolutePath());
     }
 
     /*
-    将day09下的hello.txt文件内容读入程序中，并输出到控制台
+    将day26下的hello.txt文件内容读入程序中，并输出到控制台
 
     说明点：
     1. read()的理解：返回读入的一个字符。如果达到文件末尾，返回-1
@@ -102,7 +103,7 @@ public class FileReaderWriterTest {
             //read(char[] cbuf):返回每次读入cbuf数组中的字符的个数。如果达到文件末尾，返回-1
             char[] cbuf = new char[5];
             int len;
-            while((len = fr.read(cbuf)) != -1){
+            while((len = fr.read(cbuf)) != -1){//The number of characters read, or -1 if the end of the stream has been reached
                 //方式一：
                 //错误的写法
 //                for(int i = 0;i < cbuf.length;i++){
@@ -135,6 +136,7 @@ public class FileReaderWriterTest {
         }
 
     }
+
     /*
     从内存中写出数据到硬盘的文件里。
 
@@ -177,6 +179,7 @@ public class FileReaderWriterTest {
 
     }
 
+    //实现文本文件的复制操作
     @Test
     public void testFileReaderFileWriter() {
         FileReader fr = null;

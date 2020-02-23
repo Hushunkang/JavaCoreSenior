@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
+import java.util.*;
 
 /**
  * File类的使用
@@ -199,4 +199,37 @@ public boolean delete()：删除文件或者文件夹
         file3 = new File("D:\\io\\io1");
         System.out.println(file3.delete());
     }
+
+    @Test
+    public void test8(){
+        Map<String,Object> map = new HashMap<>();
+        map.put("name","China");
+        map.put("local","Asia");
+        //遍历key
+        Set<String> stringSet = map.keySet();
+        System.out.println("stringSet是哪个类造的对象：" + stringSet.getClass());
+        for (String s : stringSet) {
+            System.out.println(s);
+        }
+        //遍历value
+        Collection<Object> values = map.values();
+        System.out.println("values是哪个类造的对象：" + values.getClass());
+        for (Object value : values) {
+            System.out.println(value);
+        }
+        //遍历key-value
+        //方式一：使用for循环
+        Set<Map.Entry<String, Object>> entries = map.entrySet();
+        System.out.println("entries是哪个类造的对象：" + entries.getClass());
+        for (Map.Entry<String, Object> entry : entries) {
+            System.out.println("key：" + entry.getKey() + "value：" + entry.getValue());
+        }
+        //方式二：使用迭代器循环
+        Iterator<Map.Entry<String, Object>> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Object> entry = iterator.next();
+            System.out.println("key：" + entry.getKey() + "value：" + entry.getValue());
+        }
+    }
+
 }
