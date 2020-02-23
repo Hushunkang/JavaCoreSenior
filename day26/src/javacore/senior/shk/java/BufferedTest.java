@@ -103,7 +103,9 @@ public class BufferedTest {
             byte[] buffer = new byte[1024];
             int len;
             while((len = bis.read(buffer)) != -1){
-                bos.write(buffer,0,len);
+                bos.write(buffer,0,len);//write方法里面自带刷新缓冲区，而且这个write方法是一个同步方法
+
+//                bos.flush();//手动刷新缓冲区
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -145,7 +147,7 @@ public class BufferedTest {
 
         long end = System.currentTimeMillis();
 
-        System.out.println("复制操作花费的时间为：" + (end - start));//618 - 176
+        System.out.println("复制操作花费的时间为：" + (end - start));//618ms - 176ms
     }
 
 

@@ -62,9 +62,11 @@ public class RandomAccessFileTest {
     @Test
     public void test2() throws IOException {
 
+//        File file = new File("hello.txt");
+//        System.out.println(file.length());//返回文件的字节个数
         RandomAccessFile raf1 = new RandomAccessFile("hello.txt","rw");
 
-        raf1.seek(3);//将指针调到角标为3的位置
+        raf1.seek(3);//将指针调到按照字节计算的角标为3的位置，角标从0开始
         raf1.write("xyz".getBytes());//
 
         raf1.close();
@@ -78,7 +80,7 @@ public class RandomAccessFileTest {
 
         RandomAccessFile raf1 = new RandomAccessFile("hello.txt","rw");
 
-        raf1.seek(3);//将指针调到角标为3的位置
+        raf1.seek(3);//将指针调到按照字节计算的角标为3的位置，角标从0开始
         //保存指针3后面的所有数据到StringBuilder中
         StringBuilder builder = new StringBuilder((int) new File("hello.txt").length());
         byte[] buffer = new byte[20];
@@ -90,6 +92,7 @@ public class RandomAccessFileTest {
         raf1.seek(3);
         raf1.write("xyz".getBytes());
 
+        //写完数据后，raf1指针就在最后的位置
         //将StringBuilder中的数据写入到文件中
         raf1.write(builder.toString().getBytes());
 

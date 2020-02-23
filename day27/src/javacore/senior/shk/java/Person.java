@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 /**
  * Person需要满足如下的要求，方可序列化
- * 1.需要实现接口：Serializable
+ * 1.需要实现接口：Serializable（这是一个标识接口，接口中啥也没有，只是用来标识---凡是实现这个接口的类都是可以序列化的）
  * 2.当前类提供一个全局常量：serialVersionUID
- * 3.除了当前Person类需要实现Serializable接口之外，还必须保证其内部所有属性
+ * 3.除了当前Person类需要实现Serializable接口之外，还必须保证其内部所有属性所对应的所有数据类型都是可序列化的
  *   也必须是可序列化的。（默认情况下，基本数据类型可序列化）
  *
  *

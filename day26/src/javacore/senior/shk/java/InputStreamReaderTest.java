@@ -12,8 +12,8 @@ import java.io.*;
  *
  * 2.作用：提供字节流与字符流之间的转换
  *
- * 3. 解码：字节、字节数组  --->字符数组、字符串
- *    编码：字符数组、字符串 ---> 字节、字节数组
+ * 3. 解码：字节、字节数组  --->字符数组、字符串 读文件的操作
+ *    编码：字符数组、字符串 ---> 字节、字节数组 写文件的操作
  *
  *
  * 4.字符集
@@ -58,7 +58,6 @@ public class InputStreamReaderTest {
 
     /*
     此时处理异常的话，仍然应该使用try-catch-finally
-
     综合使用InputStreamReader和OutputStreamWriter
      */
     @Test
@@ -66,25 +65,20 @@ public class InputStreamReaderTest {
         //1.造文件、造流
         File file1 = new File("dbcp.txt");
         File file2 = new File("dbcp_gbk.txt");
-
-        FileInputStream fis = new FileInputStream(file1);
-        FileOutputStream fos = new FileOutputStream(file2);
-
+        FileInputStream fis = new FileInputStream(file1);//读文件---解码
+        FileOutputStream fos = new FileOutputStream(file2);//写文件---编码
         InputStreamReader isr = new InputStreamReader(fis,"utf-8");
-        OutputStreamWriter osw = new OutputStreamWriter(fos,"gbk");
-
+        //这里的charsetName为utf-8，需要与当初保存dbcp.txt这个文件的字符的编码方式一致，否则读出来的数据很可能就有乱码
+        OutputStreamWriter osw = new OutputStreamWriter(fos,"gbk");//写操作，以gbk这种字符集去编码文件
         //2.读写过程
         char[] cbuf = new char[20];
         int len;
         while((len = isr.read(cbuf)) != -1){
             osw.write(cbuf,0,len);
         }
-
         //3.关闭资源
         isr.close();
         osw.close();
-
-
     }
 
 

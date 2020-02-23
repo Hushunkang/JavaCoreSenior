@@ -2,8 +2,10 @@ package javacore.senior.shk.java;
 
 import org.junit.Test;
 
-import java.io.*;
-import java.util.HashMap;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -15,9 +17,9 @@ import java.util.HashMap;
  * 二、流的体系结构
  * 抽象基类         节点流（或文件流）                               缓冲流（处理流的一种）
  * InputStream     FileInputStream   (read(byte[] buffer))        BufferedInputStream (read(byte[] buffer))
- * OutputStream    FileOutputStream  (write(byte[] buffer,0,len)  BufferedOutputStream (write(byte[] buffer,0,len) / flush()
+ * OutputStream    FileOutputStream  (write(byte[] buffer,0,len)  BufferedOutputStream (write(byte[] buffer,0,len) / write方法里面自带flush()，不需要手动刷新缓冲区
  * Reader          FileReader (read(char[] cbuf))                 BufferedReader (read(char[] cbuf) / readLine())
- * Writer          FileWriter (write(char[] cbuf,0,len)           BufferedWriter (write(char[] cbuf,0,len) / flush()
+ * Writer          FileWriter (write(char[] cbuf,0,len)           BufferedWriter (write(char[] cbuf,0,len) / write方法里面自带flush()，不需要手动刷新缓冲区
  *
  *
  *
