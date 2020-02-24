@@ -97,10 +97,10 @@ public class ReflectionTest {
     程序经过javac.exe命令以后，会生成一个或多个字节码文件(.class结尾)。//这个过程是编译过程，其实不是类的加载过程的一部分。
     接着我们使用java.exe命令对某个字节码文件进行解释运行。相当于将某个字节码文件加载到JVM内存中。此过程就称为类的加载。
     加载到JVM内存中的类，我们就称为运行时类，此运行时类，就作为Class类的一个实例。
-    相当于任意的类、数组、接口也是对象，是Class类的一个对象。
+    相当于任意的类、数组、接口等也是对象，是Class类的一个对象。
     理解很奇特哈，类其实也是一个对象，也体现了万事万物皆对象。
     2.换句话说，Class类的实例就对应着一个运行时类。
-    3.加载到内存中的运行时类，会缓存一定的时间。在此时间之内，我们可以通过不同的方式来获取此运行时类。
+    3.加载到内存中的运行时类，会缓存（缓存区）一定的时间。在此时间之内，我们可以通过不同的方式来获取此运行时类。
 
      */
 
@@ -117,7 +117,7 @@ public class ReflectionTest {
         System.out.println(clazz2);
 
         //方式三：调用Class的静态方法：forName(String classPath)
-        Class clazz3 = Class.forName("javacore.senior.shk.java.Person");
+        Class clazz3 = Class.forName("javacore.senior.shk.java.Person");//使用的频率更多一些
         //javacore.senior.shk.java.Person表示Person这个类的全类名
 //        clazz3 = Class.forName("java.lang.String");
         System.out.println(clazz3);
@@ -148,15 +148,15 @@ public class ReflectionTest {
         Class c5 = ElementType.class;
         Class c6 = Override.class;
         Class c7 = int.class;
-        Class c8 = void.class;
+        Class c8 = void.class;//没有返回值类型也是一种数据类型，类似于Cn0，不选择也是一种选择
         Class c9 = Class.class;
 
         int[] a = new int[10];
         int[] b = new int[100];
         Class c10 = a.getClass();
         Class c11 = b.getClass();
-        // 只要数组的元素类型与维度一样，就是同一个Class
-        System.out.println(c10 == c11);
+        //只要数组的元素类型与维度一样，就是同一个Class类的实例
+        System.out.println(c10 == c11);//Condition 'c10 == c11' is always 'true'
 
     }
 }

@@ -1,6 +1,6 @@
 package javacore.senior.shk.java2;
 
-import com.atguigu.java1.Person;
+import javacore.senior.shk.java1.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
