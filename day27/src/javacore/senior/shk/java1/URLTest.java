@@ -5,9 +5,9 @@ import java.net.URL;
 
 /**
  * URL网络编程
- * 1.URL:统一资源定位符，对应着互联网的某一资源地址
+ * 1.URL:统一资源定位符，对应着互联网的某一资源地址，种子其实也是一种URL
  * 2.格式：
- *  http://localhost:8080/examples/beauty.jpg?username=Tom
+ *  http://localhost:8080/examples/1000567.jpg?username=Tom
  *  协议   主机名    端口号  资源地址           参数列表
  *
  * @author shkstart
@@ -19,7 +19,7 @@ public class URLTest {
 
         try {
 
-            URL url = new URL("http://localhost:8080/examples/beauty.jpg?username=Tom");
+            URL url = new URL("http://localhost:8080/examples/1000567.jpg?username=Tom");
 
 //            public String getProtocol(  )     获取该URL的协议名
             System.out.println(url.getProtocol());

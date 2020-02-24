@@ -122,7 +122,9 @@ public class FileInputOutputStreamTest {
             byte[] buffer = new byte[1024];
             int len;
             while((len = fis.read(buffer)) != -1){
-                fos.write(buffer,0,len);
+                fos.write(buffer,0,len);//字节流处理文本文件，如果只是读操作很可能出现乱码
+                //但是一读又写，读多少又写多少（复制文本文件的操作）就没问题啦，要是只是读（给文本文件内容打印在什么地方）
+                //很可能有乱码
             }
 
         } catch (IOException e) {

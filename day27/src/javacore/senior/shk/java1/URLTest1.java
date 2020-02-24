@@ -18,14 +18,16 @@ public class URLTest1 {
         InputStream is = null;
         FileOutputStream fos = null;
         try {
-            URL url = new URL("http://localhost:8080/examples/beauty.jpg");
+            //Tomcat服务器必须处于启动状态
+            URL url = new URL("http://localhost:8080/examples/1000567.jpg");
 
             urlConnection = (HttpURLConnection) url.openConnection();
 
             urlConnection.connect();
 
-            is = urlConnection.getInputStream();
-            fos = new FileOutputStream("day10\\beauty3.jpg");
+            is = urlConnection.getInputStream();//1.先读取计算机网络中的数据
+            fos = new FileOutputStream("day27\\beauty10.jpg");//2.然后将数据写入到本地
+            //1和2就是一个下载的过程
 
             byte[] buffer = new byte[1024];
             int len;

@@ -7,8 +7,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.ServerSocket;//服务器 接受客户端请求报文 读操作 也有可能是服务器端往客户端发送数据
+import java.net.Socket;//客户端 发送请求报文到服务器 写操作
+
+//总结：发送数据方（不一定是客户端）是写操作，接收数据方（不一定是服务器）是读操作
 
 /**
  * 实现TCP的网络编程
@@ -26,7 +28,7 @@ public class TCPTest1 {
         OutputStream os = null;
         try {
             //1.创建Socket对象，指明服务器端的ip和端口号
-            InetAddress inet = InetAddress.getByName("192.168.14.100");
+            InetAddress inet = InetAddress.getByName("192.168.1.64");
             socket = new Socket(inet,8899);
             //2.获取一个输出流，用于输出数据
             os = socket.getOutputStream();
@@ -57,7 +59,7 @@ public class TCPTest1 {
 
 
     }
-    //服务端
+    //服务端，服务器先启动起来，一般为被动的一方，等待客户端来连接
     @Test
     public void server()  {
 
@@ -67,13 +69,13 @@ public class TCPTest1 {
         ByteArrayOutputStream baos = null;
         try {
             //1.创建服务器端的ServerSocket，指明自己的端口号
-            ss = new ServerSocket(8899);
+            ss = new ServerSocket(8899);//现有服务端端口，
             //2.调用accept()表示接收来自于客户端的socket
             socket = ss.accept();
             //3.获取输入流
             is = socket.getInputStream();
 
-            //不建议这样写，可能会有乱码
+            //不建议这样写，可能会有乱码，相当于把一个中文劈分成两部分了，任意一部分还原成字符串都会出现乱码问题
 //        byte[] buffer = new byte[1024];
 //        int len;
 //        while((len = is.read(buffer)) != -1){

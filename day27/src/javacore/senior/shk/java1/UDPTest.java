@@ -3,9 +3,11 @@ package javacore.senior.shk.java1;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.nio.charset.StandardCharsets;
 
 /**
  * UDPd协议的网络编程
@@ -47,4 +49,29 @@ public class UDPTest {
 
         socket.close();
     }
+
+    @Test
+    public void test3() throws UnsupportedEncodingException {
+        String str1 = "中国";
+        byte[] bytes = str1.getBytes();//使用默认的编码方式，取决于当前文件的编码方式
+
+        for (int i = 0; i < bytes.length; i++) {
+            if(i != bytes.length - 1){
+                System.out.print(bytes[i] + ",");
+                continue;
+            }
+            System.out.println(bytes[i]);
+        }//-28,-72,-83,-27,-101,-67
+
+        byte[] bytes1 = new byte[]{-28,-72,-83,-27,-101,-67};
+
+        //offset表示角标的偏移量
+        String str = new String(bytes,3,3, StandardCharsets.UTF_8);//国
+
+        System.out.println(str);
+
+        String str2 = new String(bytes1,3,3);//国
+        System.out.println(str2);
+    }
+
 }

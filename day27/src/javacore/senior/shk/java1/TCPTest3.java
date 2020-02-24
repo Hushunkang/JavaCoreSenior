@@ -33,7 +33,7 @@ public class TCPTest3 {
         while((len = fis.read(buffer)) != -1){
             os.write(buffer,0,len);
         }
-        //关闭数据的输出
+        //关闭数据的输出（显式的告诉服务器，客户端数据发送完了，你那边的read方法不要阻塞啦，可以执行下面的代码了）
         socket.shutdownOutput();
 
         //5.接收来自于服务器端的数据，并显示到控制台上
@@ -46,6 +46,8 @@ public class TCPTest3 {
         }
 
         System.out.println(baos.toString());
+
+        System.out.println("*********");
 
         //6.
         fis.close();
@@ -70,13 +72,13 @@ public class TCPTest3 {
         //5.
         byte[] buffer = new byte[1024];
         int len;
-        while((len = is.read(buffer)) != -1){
+        while((len = is.read(buffer)) != -1){//这个read方法是个阻塞的方法，这是IO API里面的，NIO API里面的是非阻塞式的
             fos.write(buffer,0,len);
         }
 
         System.out.println("图片传输完成");
 
-        //6.服务器端给予客户端反馈
+        //6.服务器端给文件保存到本地了，即任务完成后，服务器端还给客户端反馈
         OutputStream os = socket.getOutputStream();
         os.write("你好，美女，照片我已收到，非常漂亮！".getBytes());
 

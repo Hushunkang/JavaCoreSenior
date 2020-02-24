@@ -39,7 +39,7 @@ public class InetAddressTest {
 
         try {
             //File file = new File("hello.txt");
-            InetAddress inet1 = InetAddress.getByName("192.168.10.14");
+            InetAddress inet1 = InetAddress.getByName("192.168.1.64");
 
             System.out.println(inet1);
 
@@ -53,9 +53,9 @@ public class InetAddressTest {
             InetAddress inet4 = InetAddress.getLocalHost();
             System.out.println(inet4);
 
-            //getHostName()
+            //getHostName() 获取域名
             System.out.println(inet2.getHostName());
-            //getHostAddress()
+            //getHostAddress() 获取ip地址
             System.out.println(inet2.getHostAddress());
 
         } catch (UnknownHostException e) {
