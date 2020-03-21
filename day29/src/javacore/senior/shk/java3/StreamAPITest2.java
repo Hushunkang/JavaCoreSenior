@@ -19,11 +19,10 @@ import java.util.stream.Stream;
  */
 public class StreamAPITest2 {
 
-    //1-匹配与查找
+    //测试Stream的终止操作 1-匹配与查找
     @Test
     public void test1(){
         List<Employee> employees = EmployeeData.getEmployees();
-
 //        allMatch(Predicate p)——检查是否匹配所有元素。
 //          练习：是否所有的员工的年龄都大于18
         boolean allMatch = employees.stream().allMatch(e -> e.getAge() > 18);
@@ -44,7 +43,6 @@ public class StreamAPITest2 {
 //        findAny——返回当前流中的任意元素
         Optional<Employee> employee1 = employees.parallelStream().findAny();
         System.out.println(employee1);
-
     }
 
     @Test

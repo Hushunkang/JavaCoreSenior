@@ -41,10 +41,10 @@ public class StreamAPITest {
     public void test1(){
         List<Employee> employees = EmployeeData.getEmployees();
 
-//        default Stream<E> stream() : 返回一个顺序流
+//        default Stream<E> stream() : 返回一个顺序流（串行流，类似于线程同步）
         Stream<Employee> stream = employees.stream();
 
-//        default Stream<E> parallelStream() : 返回一个并行流
+//        default Stream<E> parallelStream() : 返回一个并行流（类似于线程异步）
         Stream<Employee> parallelStream = employees.parallelStream();
 
     }
@@ -62,6 +62,7 @@ public class StreamAPITest {
         Stream<Employee> stream1 = Arrays.stream(arr1);
 
     }
+
     //创建 Stream方式三：通过Stream的of()
     @Test
     public void test3(){
@@ -76,7 +77,7 @@ public class StreamAPITest {
 
 //      迭代
 //      public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
-        //遍历前10个偶数
+        //遍历前10个偶数，limit设置这个迭代的收敛条件，不加limit就变成了无限流
         Stream.iterate(0, t -> t + 2).limit(10).forEach(System.out::println);
 
 

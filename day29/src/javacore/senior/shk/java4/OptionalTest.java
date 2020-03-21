@@ -16,6 +16,9 @@ import java.util.Optional;
 public class OptionalTest {
 
 /*
+
+Optional类：为了在程序中避免出现空指针异常而创建的。
+
 Optional.of(T t) : 创建一个 Optional 实例，t必须非空；
 Optional.empty() : 创建一个空的 Optional 实例
 Optional.ofNullable(T t)：t可以为null
@@ -37,7 +40,7 @@ Optional.ofNullable(T t)：t可以为null
         //ofNullable(T t)：t可以为null
         Optional<Girl> optionalGirl = Optional.ofNullable(girl);
         System.out.println(optionalGirl);
-        //orElse(T t1):如果单前的Optional内部封装的t是非空的，则返回内部的t.
+        //orElse(T t1):如果当前的Optional内部封装的t是非空的，则返回内部的t.
         //如果内部的t是空的，则返回orElse()方法中的参数t1.
         Girl girl1 = optionalGirl.orElse(new Girl("赵丽颖"));
         System.out.println(girl1);
@@ -65,9 +68,7 @@ Optional.ofNullable(T t)：t可以为null
                 return girl.getName();
             }
         }
-
         return null;
-
     }
 
     @Test
