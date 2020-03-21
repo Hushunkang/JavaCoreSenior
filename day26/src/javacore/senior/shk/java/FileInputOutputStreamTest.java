@@ -2,7 +2,10 @@ package javacore.senior.shk.java;
 
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * 测试FileInputStream和FileOutputStream的使用

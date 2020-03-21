@@ -125,7 +125,7 @@ public class MethodRefTest {
 	}
 	
 	// Function中的R apply(T t)
-	// Employee中的String getName();
+	// Employee中的String t.getName();
 	@Test
 	public void test7() {
 		Employee employee = new Employee(1001, "Jerry", 23, 6000);

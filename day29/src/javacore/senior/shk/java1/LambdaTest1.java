@@ -21,7 +21,7 @@ import java.util.function.Consumer;
  *    ->左边：lambda形参列表的参数类型可以省略(类型推断)；如果lambda形参列表只有一个参数，其一对()也可以省略
  *    ->右边：lambda体应该使用一对{}包裹；如果lambda体只有一条执行语句（可能是return语句），省略这一对{}和return关键字
  *
- * 4.Lambda表达式的本质：作为函数式接口的实例
+ * 4.Java语言中的Lambda表达式的本质：作为函数式接口实现类的对象实例，与其它语言的Lambda表达式的本质可能有所不同
  *
  * 5. 如果一个接口中，只声明了一个抽象方法，则此接口就称为函数式接口。我们可以在一个接口上使用 @FunctionalInterface 注解，
  *   这样做可以检查它是否是一个函数式接口。
@@ -32,6 +32,7 @@ import java.util.function.Consumer;
  * @create 2019 上午 11:40
  */
 public class LambdaTest1 {
+
     //语法格式一：无参，无返回值
     @Test
     public void test1(){
@@ -52,6 +53,7 @@ public class LambdaTest1 {
 
         r2.run();
     }
+
     //语法格式二：Lambda 需要一个参数，但是没有返回值。
     @Test
     public void test2(){
@@ -121,7 +123,6 @@ public class LambdaTest1 {
     //语法格式五：Lambda 需要两个或以上的参数，多条执行语句，并且可以有返回值
     @Test
     public void test6(){
-
         Comparator<Integer> com1 = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -141,8 +142,6 @@ public class LambdaTest1 {
         };
 
         System.out.println(com2.compare(12,6));
-
-
     }
 
     //语法格式六：当 Lambda 体只有一条语句时，return 与大括号若有，都可以省略

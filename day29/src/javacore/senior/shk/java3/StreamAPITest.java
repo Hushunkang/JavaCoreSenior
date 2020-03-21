@@ -1,7 +1,8 @@
 package javacore.senior.shk.java3;
 
-import com.atguigu.java2.Employee;
-import com.atguigu.java2.EmployeeData;
+
+import javacore.senior.shk.java2.Employee;
+import javacore.senior.shk.java2.EmployeeData;
 import org.junit.Test;
 
 import java.util.Arrays;

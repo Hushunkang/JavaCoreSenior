@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetAddress;
-import java.net.ServerSocket;//服务器 接受客户端请求报文 读操作 也有可能是服务器端往客户端发送数据
-import java.net.Socket;//客户端 发送请求报文到服务器 写操作
+import java.net.ServerSocket;
+import java.net.Socket;
 
 //总结：发送数据方（不一定是客户端）是写操作，接收数据方（不一定是服务器）是读操作
 
