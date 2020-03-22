@@ -16,12 +16,12 @@ import java.util.List;
 public class Java10Test {
 
     /*
-    java10新特性一：局部变量的类型推断
+    java10新特性一：局部变量的类型推断 //Local variable type inference
 
      */
     @Test
     public void test1() {
-        //1.声明变量时，根据所附的值，推断变量的类型
+        //1.声明变量时，根据所赋的值，推断变量的类型
         var num = 10;
 
         var list = new ArrayList<Integer>();
