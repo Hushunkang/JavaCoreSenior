@@ -34,7 +34,7 @@ class SuperMan implements Human {
 
 }
 
-//用于测试AOP（面向切面编程），常用于向被代理类的方法动态注入代码
+//用于测试AOP（面向切面编程），常用于向被代理类的方法中动态注入***代码
 class HumanUtils {
 
     public void method1() {
