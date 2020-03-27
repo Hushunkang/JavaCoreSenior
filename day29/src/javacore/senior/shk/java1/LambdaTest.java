@@ -1,7 +1,7 @@
 package javacore.senior.shk.java1;
 
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.Comparator;
 
