@@ -65,6 +65,7 @@ class ProxyFactory {
 
 }
 
+//说明：如果一个类实现了InvocationHandler，那么表明这个类就是一个jdk动态代理的类
 class MyInvocationHandler implements InvocationHandler {
 
     private Object obj;//最终需要使用被代理类对象进行赋值
@@ -75,6 +76,13 @@ class MyInvocationHandler implements InvocationHandler {
 
     //当我们通过代理类对象调用方法a时，就会自动调用如下invoke方法
     //将被代理类要执行的方法a的功能就声明在invoke方法中
+    /**
+     * @param proxy 表示调用该方法的代理实例。
+     * @param method 所述方法对应于调用代理实例上的接口方法的实例。方法对象的声明类将是该方法声明的接口，它可以是代理类继承该方法的代理接口的超级接口。
+     * @param args 包含的方法调用传递代理实例的参数值的对象的阵列，或null如果接口方法没有参数。原始类型的参数包含在适当的原始包装器类的实例中，例如java.lang.Integer或java.lang.Boolean。
+     * @return 从代理实例上的方法调用返回的值。如果接口方法的声明返回类型是原始类型，则此方法返回的值必须是对应的基本包装类的实例；否则，它必须是可声明返回类型的类型。如果此方法返回的值是null和接口方法的返回类型是基本类型，那么NullPointerException将由代理实例的方法调用抛出。如上所述，如果此方法返回的值，否则不会与接口方法的声明的返回类型兼容，一个ClassCastException将代理实例的方法调用将抛出。
+     * @throws Throwable
+     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         HumanUtils utils = new HumanUtils();
