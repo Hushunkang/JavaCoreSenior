@@ -61,21 +61,37 @@ public class CollectionTestHSK {
     @Test
     public void test4(){
         test3();
-        System.out.println("我会输出吗？");//see condition1 and condition2
+        System.out.println("我会输出吗？");//see condition1 and condition2 condition3
     }
 
-    private void test3(){
+    private void test3() {
 //        this.test2();
-        test2();
+        try {
+            test2();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(222);
     }
 
-    private void  test2(){
-        throw new RuntimeException("运行时异常...");//condition1 不会输出
+    private void  test2() throws Exception {
+//        throw new RuntimeException("运行时异常...");//condition1 不会输出
 //        try {//condition2 会输出
 //            throw new RuntimeException("运行时异常...");
 //        } catch (RuntimeException e) {
 //            e.printStackTrace();
 //        }
+//        try {//condition3 不会输出
+//            int i = 10/0;
+//        } catch (RuntimeException e) {
+//            e.printStackTrace();
+//            throw new RuntimeException("运行时异常...");
+//        }
+//        System.out.println("???");//不会输出
+        if(true){
+            throw new Exception();
+        }
+        System.out.println(111);
     }
 
 }
