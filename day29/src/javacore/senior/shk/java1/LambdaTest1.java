@@ -26,7 +26,7 @@ import java.util.function.Consumer;
  * 5. 如果一个接口中，只声明了一个抽象方法，则此接口就称为函数式接口。我们可以在一个接口上使用 @FunctionalInterface 注解，
  *   这样做可以检查它是否是一个函数式接口。
  *
- * 6. 所以以前用匿名实现类表示的现在都可以用Lambda表达式来写。
+ * 6. 所以以前用匿名内部类表示的现在都可以用Lambda表达式来写。
  *
  * @author shkstart
  * @create 2019 上午 11:40
