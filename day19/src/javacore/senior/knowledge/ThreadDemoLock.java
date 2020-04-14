@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * java.util.concurrent.locks.Lock锁的方式实现线程同步以解决线程安全问题
  *
  * @author hskbeginner
- * @create 2020/2/13-19:12
+ * @create 2020/2/13
  */
 public class ThreadDemoLock {
 

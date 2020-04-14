@@ -2,7 +2,7 @@ package javacore.senior.knowledge;
 
 /**
  * @author hskbeginner
- * @create 2020/2/11-22:06
+ * @create 2020/2/11
  */
 public class ThreadTest{
 

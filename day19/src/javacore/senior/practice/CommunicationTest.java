@@ -5,7 +5,7 @@ package javacore.senior.practice;
  * 线程通信 使用两个线程打印1-100之间（包含1和100）的N并且需要交替打印
  *
  * @author hskbeginner
- * @create 2020/2/13-21:38
+ * @create 2020/2/13
  */
 public class CommunicationTest {
 

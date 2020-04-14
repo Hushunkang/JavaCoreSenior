@@ -5,7 +5,7 @@ package javacore.senior.knowledge;
  * 开启三个线程模拟三个窗口售票，实现Runnable接口的方式来实现多线程
  *
  * @author hskbeginner
- * @create 2020/2/12-17:08
+ * @create 2020/2/12
  */
 public class WindowTest2 {
 

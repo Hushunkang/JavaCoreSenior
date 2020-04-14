@@ -6,7 +6,7 @@ package javacore.senior.practice;
  * 练习：创建两个分线程，其中一个线程遍历100以内的偶数，另一个线程遍历100以内的奇数
  *
  * @author hskbeginner
- * @create 2020/2/11-22:47
+ * @create 2020/2/11
  */
 public class ThreadDemoThread {
 

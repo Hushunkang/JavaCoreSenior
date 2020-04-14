@@ -8,7 +8,7 @@ package javacore.senior.practice;
  *  多个线程一个run，同时做一件事情，并发
  *
  * @author hskbeginner
- * @create 2020/2/13-22:25
+ * @create 2020/2/13
  */
 public class ProductTest {
 

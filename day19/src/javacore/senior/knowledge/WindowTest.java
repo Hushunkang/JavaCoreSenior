@@ -31,7 +31,7 @@ package javacore.senior.knowledge;
  *   操作被同步的代码时，只能有一个线程参与，其它线程都在等待，相当于是单线程的过程，效率低---同步的弊端
  *
  * @author hskbeginner
- * @create 2020/2/12-20:53
+ * @create 2020/2/12
  */
 public class WindowTest {
 

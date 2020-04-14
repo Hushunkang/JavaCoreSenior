@@ -5,7 +5,7 @@ package javacore.senior.knowledge;
  * 演示线程死锁问题
  *
  * @author hskbeginner
- * @create 2020/2/13-2:22
+ * @create 2020/2/13
  */
 public class DeadLock {
 

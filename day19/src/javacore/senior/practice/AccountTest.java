@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author hskbeginner
- * @create 2020/2/13-21:02
+ * @create 2020/2/13
  */
 public class AccountTest {
 

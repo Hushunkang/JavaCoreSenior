@@ -5,7 +5,7 @@ package javacore.senior.practice;
  * 实现多线程的方式二：实现java.lang.Runnable接口
  *
  * @author hskbeginner
- * @create 2020/2/12-16:34
+ * @create 2020/2/12
  */
 public class ThreadDemoRunnable {
 

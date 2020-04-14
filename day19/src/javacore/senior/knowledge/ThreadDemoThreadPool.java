@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * 实现多线程的方式四：线程池的方式
  *
  * @author hskbeginner
- * @create 2020/2/14-0:25
+ * @create 2020/2/14
  */
 public class ThreadDemoThreadPool {
 

@@ -10,7 +10,7 @@ import java.util.concurrent.FutureTask;
  * 实现多线程的方式三：实现java.util.concurrent.Callable接口---jdk1.5新增
  *
  * @author hskbeginner
- * @create 2020/2/13-23:13
+ * @create 2020/2/13
  */
 public class ThreadDemoCallable {
 

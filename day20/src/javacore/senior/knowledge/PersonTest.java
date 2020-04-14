@@ -2,7 +2,7 @@ package javacore.senior.knowledge;
 
 /**
  * @author hskbeginner
- * @create 2020/2/15-12:43
+ * @create 2020/2/15
  */
 public class PersonTest {
 

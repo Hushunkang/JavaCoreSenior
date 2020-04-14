@@ -4,7 +4,7 @@ package com.atguigu.bean;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年03月22日 07时52分39秒
+ * @create 2020年03月22日
  */
 public class Person {
 

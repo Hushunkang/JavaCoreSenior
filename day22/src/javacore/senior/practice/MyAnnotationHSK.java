@@ -9,7 +9,7 @@ import static java.lang.annotation.ElementType.*;
 
 /**
  * @author hskbeginner
- * @create 2020/2/17-19:46
+ * @create 2020/2/17
  * @see java.lang.reflect.AnnotatedElement
  */
 @Retention(RetentionPolicy.RUNTIME)

@@ -11,7 +11,7 @@ package javacore.senior.practice;
  * 四位的二进制数等价于一位的十六进制数，因此16位的二进制数等价于4位的16进制数
  *
  * @author hskbeginner
- * @create 2020/2/15-23:55
+ * @create 2020/2/15
  */
 public class StringDemo2HSK {
 

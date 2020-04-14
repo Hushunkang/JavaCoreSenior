@@ -6,7 +6,7 @@ package javacore.senior.practice;
  * 比如：获取“ab”在 “abkkcadkabkebfkaabkskab” 中出现的次数
  *
  * @author hskbeginner
- * @create 2020/2/15-22:40
+ * @create 2020/2/15
  */
 public class StringDemo1HSK {
 

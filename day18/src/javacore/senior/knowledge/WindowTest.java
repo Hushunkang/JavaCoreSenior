@@ -7,7 +7,7 @@ package javacore.senior.knowledge;
  * 存在重票问题，线程安全问题，待解决
  *
  * @author hskbeginner
- * @create 2020/2/12-15:56
+ * @create 2020/2/12
  */
 public class WindowTest {
 
