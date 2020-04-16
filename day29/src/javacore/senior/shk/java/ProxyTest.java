@@ -60,12 +60,15 @@ class ProxyFactory {
 
         handler.bind(obj);
 
+        //以下描述只是一个大概描述，更精准的情况要对jvm等相关知识研究的很深
+        //Proxy类的作用：在程序运行的过程中（jvm对字节码文件解释执行的过程中），动态创建一个代理类的字节码文件
+        //Proxy类中newProxyInstance方法的作用：得到动态创建的代理类的对象实例
         return Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), handler);
     }
 
 }
 
-//说明：如果一个类实现了InvocationHandler，那么表明这个类就是一个jdk动态代理的类
+//说明：如果一个类实现了InvocationHandler，那么表明这个类就是一个jdk动态代理类
 class MyInvocationHandler implements InvocationHandler {
 
     private Object obj;//最终需要使用被代理类对象进行赋值
@@ -105,8 +108,8 @@ public class ProxyTest {
         //动态代理：一个代理类可以搞定所有被代理类
         //被代理类对象
         Human superMan = new SuperMan();
-        //proxyInstance:代理类对象//说明：此处强转不可强转成SuperMan类型的，若可以，代理类和被代理类不就是同一个了么，因此不可以
-        Human proxyInstance = (Human) ProxyFactory.getProxyInstance(superMan);
+        //proxyInstance:动态生成的代理类对象实例//说明：此处强转不可强转成SuperMan类型的，若可以，代理类和被代理类不就是同一个了么，因此不可以
+        Human proxyInstance = (Human) ProxyFactory.getProxyInstance(superMan);//jdk动态代理动态生成的代理类默认的格式为：com.sun.proxy.$ProxyXXXX
         //当通过代理类对象调用方法时，会自动调用被代理类中同名方法
         proxyInstance.getBelief();
         proxyInstance.eat("四川麻辣烫");
